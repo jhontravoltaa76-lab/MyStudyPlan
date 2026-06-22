@@ -25,6 +25,7 @@
 
 Gambaran singkat dari struktur utama repositori ini:
 
+```
 MyStudyPlan/  
 ├── android/          \# File konfigurasi & native code untuk Android  
 ├── ios/              \# File konfigurasi & native code untuk iOS  
@@ -38,6 +39,7 @@ MyStudyPlan/
 ├── assets/images/    \# Tempat menyimpan aset gambar lokal  
 ├── pubspec.yaml      \# File konfigurasi utama (dependency, assets, versi)  
 └── README.md         \# Dokumentasi proyek (File ini)
+```
 
 ## **🚀 Memulai Proyek (Getting Started)**
 
@@ -55,25 +57,27 @@ Pastikan Anda telah menginstal beberapa perangkat lunak berikut:
 
 Jalankan perintah berikut di terminal Anda untuk menyalin proyek ke komputer lokal:
 
-git clone \[https://github.com/jhontravoltaa76-lab/MyStudyPlan.git\](https://github.com/jhontravoltaa76-lab/MyStudyPlan.git)  
-cd MyStudyPlan
+```
+git clone https://github.com/jhontravoltaa76-lab/MyStudyPlan.git
 
+cd MyStudyPlan
+```
 ### **2\. Unduh Dependensi (Packages)**
 
 Ambil semua paket (library) yang dibutuhkan oleh proyek ini sesuai dengan pubspec.yaml:
-
+```
 flutter pub get
-
+```
 ### **3\. Jalankan Aplikasi**
 
 Pastikan emulator sudah berjalan atau perangkat asli (HP) Anda sudah tersambung melalui USB debugging. Kemudian jalankan:
-
+```
 flutter run
-
+```
 *(Opsional)* Untuk mem-build ke platform tertentu, Anda bisa menambahkan flag platform. Contoh untuk web:
-
+```
 flutter run \-d chrome
-
+```
 ## **📦 Build untuk Produksi**
 
 Jika Anda ingin menghasilkan file installer (APK/IPA/EXE), gunakan perintah berikut:
