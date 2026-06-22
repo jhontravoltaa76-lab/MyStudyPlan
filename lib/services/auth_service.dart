@@ -26,11 +26,8 @@ class AuthService {
   ) async {
     try {
       // 1. Buat akun di Firebase Auth
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(email: email, password: password);
 
       // 2. Simpan data tambahan (role & tipe) di Cloud Firestore
       await _firestore.collection('users').doc(userCredential.user!.uid).set({
@@ -72,14 +69,17 @@ class AuthService {
   // Fungsi untuk mendapatkan data user (termasuk role & tipe)
   Future<Map<String, dynamic>?> getUserData(String uid) async {
     try {
-      DocumentSnapshot doc =
-          await _firestore.collection('users').doc(uid).get();
+      DocumentSnapshot doc = await _firestore
+          .collection('users')
+          .doc(uid)
+          .get();
       return doc.data() as Map<String, dynamic>?;
     } catch (e) {
       print('Error getUserData: $e');
       return null;
     }
   }
+
   Future<String> resetPassword(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);
@@ -93,6 +93,7 @@ class AuthService {
       }
     }
   }
+
   Stream<DocumentSnapshot> getUserDataStream(String uid) {
     return _firestore.collection('users').doc(uid).snapshots();
   }
