@@ -10,10 +10,6 @@
 * 🔔 **Pengingat (Reminders):** Dapatkan notifikasi *push* untuk jadwal kelas yang akan segera dimulai atau tenggat waktu tugas yang mendekat.  
 * 📱 **Cross-Platform:** Akses rencana belajar Anda kapan saja dan di mana saja. Dukungan penuh untuk perangkat Mobile (Android/iOS) maupun Desktop (Windows/macOS/Linux/Web).
 
-## **📸 Tangkapan Layar (Screenshots)**
-
-*(Tambahkan tangkapan layar aplikasi Anda di sini dengan mengganti URL gambar)*
-
 ## **🛠️ Teknologi yang Digunakan**
 
 * **Framework Core:** [Flutter](https://flutter.dev/)  
