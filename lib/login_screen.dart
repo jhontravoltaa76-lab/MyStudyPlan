@@ -116,7 +116,10 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.5),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white.withOpacity(0.6), width: 1.5),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.6),
+                width: 1.5,
+              ),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
             child: TextFormField(
@@ -139,7 +142,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 suffixIcon: isPassword
                     ? IconButton(
                         icon: Icon(
-                          _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          _isPasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: const Color(0xFF00695C),
                         ),
                         onPressed: () {
@@ -219,11 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFF008080),
-                  Color(0xFFE0F7F6),
-                  Colors.white,
-                ],
+                colors: [Color(0xFF008080), Color(0xFFE0F7F6), Colors.white],
               ),
             ),
           ),
@@ -265,39 +266,52 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Logo
-                    ShaderMask(
-                      shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xFF00B4DB), Color(0xFF0083B0)],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ).createShader(bounds),
-                      blendMode: BlendMode.srcATop,
-                      child: Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white.withOpacity(0.2),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              blurRadius: 15,
-                              spreadRadius: 2,
-                            ),
-                          ],
+                    // Logo (Sudah bersih dari ShaderMask luar)
+                    Container(
+                      width: 100,
+                      height: 100,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white.withOpacity(0.2),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.3),
+                          width: 1.5,
                         ),
-                        child: ClipOval(
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Image.asset(
-                                'assets/images/logo.png',
-                                fit: BoxFit.contain,
-                                errorBuilder: (context, error, stackTrace) =>
-                                    const Icon(Icons.school, size: 50, color: Colors.white),
-                              ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 15,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: ClipOval(
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Padding(
+                            padding: const EdgeInsets.all(0.0),
+                            child: Image.asset(
+                              'assets/images/logo.png',
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  ShaderMask(
+                                    shaderCallback: (bounds) =>
+                                        const LinearGradient(
+                                          colors: [
+                                            Color(0xFF00B4DB),
+                                            Color(0xFF0083B0),
+                                          ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                        ).createShader(bounds),
+                                    blendMode: BlendMode.srcIn,
+                                    child: const Icon(
+                                      Icons.school,
+                                      size: 50,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                             ),
                           ),
                         ),
@@ -305,28 +319,38 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      _isLogin ? 'Welcome Back' : 'Create Account',
+                      _isLogin ? 'Selamat Datang' : 'Buat Akun',
                       style: GoogleFonts.outfit(
                         fontSize: 32,
                         fontWeight: FontWeight.w300,
                         color: const Color(0xFF004D40),
                         shadows: const [
-                          Shadow(color: Colors.white, offset: Offset(1, 1), blurRadius: 2),
+                          Shadow(
+                            color: Colors.white,
+                            offset: Offset(1, 1),
+                            blurRadius: 2,
+                          ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 40),
 
-                    // Forms
+                    // Forms (Kondisi Registrasi Akun Baru)
                     if (!_isLogin) ...[
                       // Role Selection
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
                         margin: const EdgeInsets.only(bottom: 16),
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.white.withOpacity(0.6), width: 1.5),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.6),
+                            width: 1.5,
+                          ),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -337,9 +361,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                   value: 'mahasiswa',
                                   groupValue: _userTipe,
                                   activeColor: const Color(0xFF00695C),
-                                  onChanged: (val) => setState(() => _userTipe = val!),
+                                  onChanged: (val) =>
+                                      setState(() => _userTipe = val!),
                                 ),
-                                Text('Mahasiswa', style: GoogleFonts.outfit(fontWeight: FontWeight.w500)),
+                                Text(
+                                  'Mahasiswa',
+                                  style: GoogleFonts.outfit(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
@@ -348,9 +378,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                   value: 'siswa',
                                   groupValue: _userTipe,
                                   activeColor: const Color(0xFF00695C),
-                                  onChanged: (val) => setState(() => _userTipe = val!),
+                                  onChanged: (val) =>
+                                      setState(() => _userTipe = val!),
                                 ),
-                                Text('Siswa', style: GoogleFonts.outfit(fontWeight: FontWeight.w500)),
+                                Text(
+                                  'Siswa',
+                                  style: GoogleFonts.outfit(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -360,36 +396,43 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _namaController,
                         labelText: 'Nama Lengkap',
                         icon: Icons.person_outline,
-                        validator: (value) => value!.isEmpty ? 'Tidak boleh kosong' : null,
+                        validator: (value) =>
+                            value!.isEmpty ? 'Tidak boleh kosong' : null,
                       ),
                       _buildGlassInput(
                         controller: _institusiController,
-                        labelText: _userTipe == 'mahasiswa' ? 'Nama Kampus' : 'Nama Sekolah',
+                        labelText: _userTipe == 'mahasiswa'
+                            ? 'Nama Universitas'
+                            : 'Nama Sekolah',
                         icon: Icons.account_balance_outlined,
-                        validator: (value) => value!.isEmpty ? 'Tidak boleh kosong' : null,
+                        validator: (value) =>
+                            value!.isEmpty ? 'Tidak boleh kosong' : null,
                       ),
                       _buildGlassInput(
                         controller: _nomorIdController,
                         labelText: _userTipe == 'mahasiswa' ? 'NIM' : 'NISN',
                         icon: Icons.badge_outlined,
                         keyboardType: TextInputType.number,
-                        validator: (value) => value!.isEmpty ? 'Tidak boleh kosong' : null,
+                        validator: (value) =>
+                            value!.isEmpty ? 'Tidak boleh kosong' : null,
                       ),
-                    ],
-
+                    ], // <-- Di sinilah kurung siku penutup yang kemarin bocor
+                    // Kolom General (Muncul di Form Login maupun Registrasi)
                     _buildGlassInput(
                       controller: _emailController,
                       labelText: 'Email',
                       icon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
-                      validator: (value) => value!.isEmpty ? 'Email diperlukan' : null,
+                      validator: (value) =>
+                          value!.isEmpty ? 'Email diperlukan' : null,
                     ),
                     _buildGlassInput(
                       controller: _passwordController,
                       labelText: 'Password',
                       icon: Icons.lock_outline,
                       isPassword: true,
-                      validator: (value) => value!.length < 6 ? 'Min 6 karakter' : null,
+                      validator: (value) =>
+                          value!.length < 6 ? 'Min 6 karakter' : null,
                     ),
 
                     if (_isLogin)
@@ -415,23 +458,37 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.only(bottom: 16.0),
                         child: Text(
                           _errorMessage!,
-                          style: GoogleFonts.outfit(color: Colors.redAccent, fontSize: 14, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.outfit(
+                            color: Colors.redAccent,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
 
-                    _buildActionBtn(_isLogin ? 'Login' : 'Registrasi', _submitForm),
+                    _buildActionBtn(
+                      _isLogin ? 'Login' : 'Registrasi',
+                      _submitForm,
+                    ),
                     const SizedBox(height: 25),
 
                     GestureDetector(
                       onTap: _toggleMode,
                       child: RichText(
                         text: TextSpan(
-                          text: _isLogin ? 'Belum punya akun? ' : 'Sudah punya akun? ',
-                          style: GoogleFonts.outfit(color: const Color(0xFF004D40), fontSize: 14),
+                          text: _isLogin
+                              ? 'Belum punya akun? '
+                              : 'Sudah punya akun? ',
+                          style: GoogleFonts.outfit(
+                            color: const Color(0xFF004D40),
+                            fontSize: 14,
+                          ),
                           children: [
                             TextSpan(
-                              text: _isLogin ? 'Daftar di sini' : 'Masuk di sini',
+                              text: _isLogin
+                                  ? 'Daftar di sini'
+                                  : 'Masuk di sini',
                               style: GoogleFonts.outfit(
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF00695C),
@@ -461,7 +518,10 @@ void _tampilkanDialogLupaPassword(BuildContext context) {
     builder: (context) {
       return AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text('Reset Password', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+        title: Text(
+          'Reset Password',
+          style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -474,7 +534,9 @@ void _tampilkanDialogLupaPassword(BuildContext context) {
               controller: emailResetController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 prefixIcon: const Icon(Icons.email),
               ),
               keyboardType: TextInputType.emailAddress,
@@ -489,13 +551,20 @@ void _tampilkanDialogLupaPassword(BuildContext context) {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF00695C),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
             ),
             onPressed: () async {
               String email = emailResetController.text.trim();
               if (email.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Email tidak boleh kosong!', style: GoogleFonts.outfit())),
+                  SnackBar(
+                    content: Text(
+                      'Email tidak boleh kosong!',
+                      style: GoogleFonts.outfit(),
+                    ),
+                  ),
                 );
                 return;
               }
@@ -506,17 +575,26 @@ void _tampilkanDialogLupaPassword(BuildContext context) {
               if (hasil == "Sukses") {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Email reset password telah dikirim! Cek kotak masuk Anda.', style: GoogleFonts.outfit()),
+                    content: Text(
+                      'Email reset password telah dikirim! Cek kotak masuk Anda.',
+                      style: GoogleFonts.outfit(),
+                    ),
                     backgroundColor: Colors.green,
                   ),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(hasil, style: GoogleFonts.outfit()), backgroundColor: Colors.red),
+                  SnackBar(
+                    content: Text(hasil, style: GoogleFonts.outfit()),
+                    backgroundColor: Colors.red,
+                  ),
                 );
               }
             },
-            child: Text('Kirim', style: GoogleFonts.outfit(color: Colors.white)),
+            child: Text(
+              'Kirim',
+              style: GoogleFonts.outfit(color: Colors.white),
+            ),
           ),
         ],
       );
