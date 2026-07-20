@@ -1,4 +1,4 @@
-# ** MyStudyPlan**
+# **MyStudyPlan**
 
 **MyStudyPlan** adalah aplikasi produktivitas dan manajemen jadwal belajar yang dirancang khusus untuk membantu pelajar dan mahasiswa mengatur waktu mereka dengan lebih efisien. Dibangun menggunakan framework **Flutter**, aplikasi ini dapat berjalan dengan mulus di berbagai platform seperti Android, iOS, Web, dan Desktop.
 
