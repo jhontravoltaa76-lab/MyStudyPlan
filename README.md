@@ -2,10 +2,11 @@
 
 **MyStudyPlan** adalah aplikasi produktivitas dan manajemen jadwal belajar yang dirancang khusus untuk membantu pelajar dan mahasiswa mengatur waktu mereka dengan lebih efisien. Dibangun menggunakan framework **Flutter**, aplikasi ini dapat berjalan dengan mulus di berbagai platform seperti Android, iOS, Web, dan Desktop.
 
-## ** Cuplikan Tampilan**
+
+## **Cuplikan Tampilan**
 
 ![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/4fb6e59ada0308439482c9ea67e3d5707d079d06/public/gambar1.png) 
-## ** Fitur Utama**
+## **Fitur Utama**
 
 * 📅 **Manajemen Jadwal:** Buat, edit, dan atur jadwal kelas, waktu belajar mandiri, serta kegiatan ekstrakurikuler dengan antarmuka yang intuitif.  
 * ✅ **Pelacakan Tugas (To-Do List):** Catat Pekerjaan Rumah (PR), proyek, dan tenggat waktu (*deadline*) agar tidak ada tugas yang terlewat.  
