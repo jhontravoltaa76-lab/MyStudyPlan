@@ -4,8 +4,7 @@
 
 # **Cuplikan Tampilan**
 
-![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/4fb6e59ada0308439482c9ea67e3d5707d079d06/public/gambar1.png) ![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/289b4cf58ffcc4ba437ba03de35ffa7f2979a296/public/gambar2.png)
-
+![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/4fb6e59ada0308439482c9ea67e3d5707d079d06/public/gambar1.png) 
 ## ** Fitur Utama**
 
 * 📅 **Manajemen Jadwal:** Buat, edit, dan atur jadwal kelas, waktu belajar mandiri, serta kegiatan ekstrakurikuler dengan antarmuka yang intuitif.  
