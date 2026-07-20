@@ -1,12 +1,12 @@
-# **📚 MyStudyPlan**
+# ** MyStudyPlan**
 
 **MyStudyPlan** adalah aplikasi produktivitas dan manajemen jadwal belajar yang dirancang khusus untuk membantu pelajar dan mahasiswa mengatur waktu mereka dengan lebih efisien. Dibangun menggunakan framework **Flutter**, aplikasi ini dapat berjalan dengan mulus di berbagai platform seperti Android, iOS, Web, dan Desktop.
 
 # **Cuplikan Tampilan**
 
-![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/4fb6e59ada0308439482c9ea67e3d5707d079d06/public/gambar1.png)
+![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/4fb6e59ada0308439482c9ea67e3d5707d079d06/public/gambar1.png) ![image alt](https://github.com/jhontravoltaa76-lab/MyStudyPlan/blob/289b4cf58ffcc4ba437ba03de35ffa7f2979a296/public/gambar2.png)
 
-## **✨ Fitur Utama**
+## ** Fitur Utama**
 
 * 📅 **Manajemen Jadwal:** Buat, edit, dan atur jadwal kelas, waktu belajar mandiri, serta kegiatan ekstrakurikuler dengan antarmuka yang intuitif.  
 * ✅ **Pelacakan Tugas (To-Do List):** Catat Pekerjaan Rumah (PR), proyek, dan tenggat waktu (*deadline*) agar tidak ada tugas yang terlewat.  
@@ -21,7 +21,7 @@
 * **Dukungan Native:** C++, CMake, Swift, C, HTML  
 * **Manajemen Aset:** Menggunakan aset gambar lokal kustom yang dikelola secara terstruktur di dalam direktori assets/images/.
 
-## **📂 Struktur Direktori Proyek**
+## ** Struktur Direktori Proyek**
 
 Gambaran singkat dari struktur utama repositori ini:
 
@@ -41,7 +41,7 @@ MyStudyPlan/
 └── README.md         \# Dokumentasi proyek (File ini)
 ```
 
-## **🚀 Memulai Proyek (Getting Started)**
+## ** Memulai Proyek (Getting Started)**
 
 Untuk menjalankan proyek ini di mesin lokal Anda, ikuti langkah-langkah di bawah ini.
 
@@ -78,7 +78,7 @@ flutter run
 ```
 flutter run \-d chrome
 ```
-## **📦 Build untuk Produksi**
+## ** Build untuk Produksi**
 
 Jika Anda ingin menghasilkan file installer (APK/IPA/EXE), gunakan perintah berikut:
 
@@ -87,7 +87,7 @@ Jika Anda ingin menghasilkan file installer (APK/IPA/EXE), gunakan perintah beri
 * **iOS:** flutter build ios \--release  
 * **Web:** flutter build web \--release
 
-## **🤝 Kontribusi**
+## ** Kontribusi**
 
 Kami sangat mengapresiasi segala bentuk kontribusi, baik itu pelaporan kutu (*bugs*), ide fitur baru, maupun perbaikan kode\! Jangan ragu untuk memeriksa halaman [Issues](https://github.com/jhontravoltaa76-lab/MyStudyPlan/issues) sebelum memulai.
 
@@ -98,11 +98,3 @@ Langkah-langkah untuk berkontribusi:
 3. Lakukan perubahan baris kode dan *Commit* perubahan Anda (git commit \-m 'Menambahkan Fitur Keren').  
 4. *Push* ke *branch* repositori *fork* Anda (git push origin feature/FiturKerenAnda).  
 5. Buka **Pull Request** di repositori utama dan jelaskan perubahan yang Anda buat.
-
-## **📚 Pelajari Flutter Lebih Lanjut**
-
-Jika ini adalah pertama kalinya Anda menggunakan Flutter, beberapa sumber daya berikut dapat sangat membantu:
-
-* [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)  
-* [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)  
-* [Dokumentasi Resmi Flutter](https://docs.flutter.dev/)
