@@ -14,14 +14,14 @@
 * 🔔 **Pengingat (Reminders):** Dapatkan notifikasi *push* untuk jadwal kelas yang akan segera dimulai atau tenggat waktu tugas yang mendekat.  
 * 📱 **Cross-Platform:** Akses rencana belajar Anda kapan saja dan di mana saja. Dukungan penuh untuk perangkat Mobile (Android/iOS) maupun Desktop (Windows/macOS/Linux/Web).
 
-## **🛠️ Teknologi yang Digunakan**
+## **Teknologi yang Digunakan**
 
 * **Framework Core:** [Flutter](https://flutter.dev/)  
 * **Bahasa Pemrograman Utama:** Dart (72.5%)  
 * **Dukungan Native:** C++, CMake, Swift, C, HTML  
 * **Manajemen Aset:** Menggunakan aset gambar lokal kustom yang dikelola secara terstruktur di dalam direktori assets/images/.
 
-## ** Struktur Direktori Proyek**
+## **Struktur Direktori Proyek**
 
 Gambaran singkat dari struktur utama repositori ini:
 
@@ -41,7 +41,7 @@ MyStudyPlan/
 └── README.md         \# Dokumentasi proyek (File ini)
 ```
 
-## ** Memulai Proyek (Getting Started)**
+## **Memulai Proyek (Getting Started)**
 
 Untuk menjalankan proyek ini di mesin lokal Anda, ikuti langkah-langkah di bawah ini.
 
@@ -78,7 +78,7 @@ flutter run
 ```
 flutter run \-d chrome
 ```
-## ** Build untuk Produksi**
+## **Build untuk Produksi**
 
 Jika Anda ingin menghasilkan file installer (APK/IPA/EXE), gunakan perintah berikut:
 
@@ -87,7 +87,7 @@ Jika Anda ingin menghasilkan file installer (APK/IPA/EXE), gunakan perintah beri
 * **iOS:** flutter build ios \--release  
 * **Web:** flutter build web \--release
 
-## ** Kontribusi**
+## **Kontribusi**
 
 Kami sangat mengapresiasi segala bentuk kontribusi, baik itu pelaporan kutu (*bugs*), ide fitur baru, maupun perbaikan kode\! Jangan ragu untuk memeriksa halaman [Issues](https://github.com/jhontravoltaa76-lab/MyStudyPlan/issues) sebelum memulai.
 
